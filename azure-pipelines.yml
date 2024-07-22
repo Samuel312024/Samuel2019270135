@@ -18,7 +18,7 @@ steps:
 - script: |
     npm install -g @angular/cli@6.14.16
     npm install
-    node --max-old-space-size=4096 node_modules/@angular/cli/bin/ng build --prod
+    # node --max-old-space-size=4096 node_modules/@angular/cli/bin/ng build --prod
     npm run postbuild
   displayName: 'npm install and build'
   workingDirectory: '$(Build.SourcesDirectory)/my-app'
