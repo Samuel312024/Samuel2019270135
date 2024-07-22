@@ -22,7 +22,7 @@ steps:
     npm run postbuild
   displayName: 'npm install and build'
   workingDirectory: '$(Build.SourcesDirectory)/my-app'
-- task: AzureStaticWebApp@0
+- task: PublishPipelineArtifact@1
   inputs:
     app_location: '/my-app/dist'
     output_location: '/my-app/dist'
