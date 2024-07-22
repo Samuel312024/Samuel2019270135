@@ -24,9 +24,13 @@ steps:
   workingDirectory: '$(Build.SourcesDirectory)/my-app'
 - task: PublishPipelineArtifact@1
   inputs:
-    app_location: '/my-app/dist'
-    output_location: '/my-app/dist'
-    config_file_location: '/my-app/src'
-    skip_app_build: true
-    verbose: true
-    azure_static_web_apps_api_token: '$(deployment_token_master)'
+    artifactName: e2e-server
+    targetPath: '$(Build.ArtifactStagingDirectory)'
+    publishLocation: 'pipeline'
+  displayName: 'Publish npm artifact'
+    # app_location: '/my-app/dist'
+    # output_location: '/my-app/dist'
+    # config_file_location: '/my-app/src'
+    # skip_app_build: true
+    # verbose: true
+    # azure_static_web_apps_api_token: '$(deployment_token_master)'
