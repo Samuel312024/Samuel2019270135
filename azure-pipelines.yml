@@ -12,11 +12,11 @@ pool:
 steps:
 - task: NodeTool@0
   inputs:
-    versionSpec: '12.21.0'
+    versionSpec: '12.22.12'
   displayName: 'Install Node.js'
 
 - script: |
-    npm install -g @angular/cli@13.3.0
+    npm install -g @angular/cli@6.14.16
     npm install
     node --max-old-space-size=4096 node_modules/@angular/cli/bin/ng build --prod
     npm run postbuild
